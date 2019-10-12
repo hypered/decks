@@ -8,11 +8,11 @@ all: \
   ../entrypoint/as-is/decks/git-cards.html \
   ../entrypoint/as-is/decks/git-craft.html
 
-../entrypoint/as-is/decks/%.html: %.md default.revealjs
+../entrypoint/as-is/decks/%.html: %.md ../design-system/slides/default.revealjs
 	pandoc \
 	  -t html5 \
 	  -s \
-	  --template=default.revealjs \
+	  --template=../design-system/slides/default.revealjs \
 	  --standalone \
 	  --section-divs \
 	  --variable revealjs-url="/static/revealjs" \

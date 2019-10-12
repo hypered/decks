@@ -12,7 +12,7 @@ for i in sample git-craft git-basics git-advanced git-cards ; do
 pandoc \
   -t html5 \
   -s \
-  --template=default.revealjs \
+  --template=../design-system/slides/default.revealjs \
   --standalone \
   --section-divs \
   --variable revealjs-url="/static/revealjs" \
@@ -27,5 +27,5 @@ done
 
 if [[ -d ../entrypoint ]] ; then
   rsync -aP ./docs/   ../entrypoint/as-is/decks/
-  rsync -aP ./static/ ../entrypoint/as-is/static/
+  rsync -aP ../design-system/docs/static/ ../entrypoint/as-is/static/
 fi
